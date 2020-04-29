@@ -1,0 +1,28 @@
+rem   First Postion
+x=60 :y=30
+rem   move step size
+sx=4.6 :sy=3.2
+rem   graph screen size
+gx =200 :gy=200
+rem Radius size
+r=10
+rem Key code variable
+k=0
+rem inital first
+graphsize(gx, gy)
+color black
+rect(0,0,gx, gy)
+rem Display animation
+while not(k=83)
+color green
+circle(int(x),int(y),r)
+pause 0.1
+if x > (Graphwidth-r) then sx = -1 * sx
+if y > (Graphheight-r) then sy = -1 * sy
+if x < r then sx = -1 * sx
+if y < r then sy = -1 * sy
+k=key
+color black
+circle(int(x),int(y),r)
+x = x+sx:  y =y+sy
+end while
